@@ -72,6 +72,9 @@ const printWordArray = (array) => {
 
 const driver = () => {
     let letters = readParamLettersAsString();
+    if (!letters){
+        throw "Missing string parameter"
+    }
     let word_array = readFileToArray("./words.txt");
     let thinned_words = thinWords(word_array, letters);
     let sorted_words = sortLongToShort(thinned_words);
